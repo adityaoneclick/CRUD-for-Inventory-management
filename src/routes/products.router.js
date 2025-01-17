@@ -26,8 +26,8 @@ productsRouter.get('/:name', async (req, res) => {
 
 
 productsRouter.post('/', async (req, res) => {
-    const { name, description, price, quantity} = req.body;
-    let {category_id }= req.body;
+    const { name, description, price, quantity } = req.body;
+    let { category_id }= req.body;
     if (!name || !description || !price || !quantity || !category_id) {
         return res.status(400).json({ msg: "All fields are required" });
     }
@@ -43,7 +43,7 @@ productsRouter.post('/', async (req, res) => {
             description,
             price,
             quantity,
-            category_id,
+            category_id
         });
         await newProduct.save();
 

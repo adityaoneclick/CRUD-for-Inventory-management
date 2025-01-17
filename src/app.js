@@ -10,10 +10,10 @@ app.use(express.urlencoded({extended:true}))
 app.use('/products',productsRouter)
 app.use('/categories',categoriesRouter)
 app.get('/*',(req,res)=>{
-    res.send({msg:"helo from ims"})
+    res.send({msg:"hello from ims"})
 })
 
-mongoose.connect("mongodb://localhost:27017/Inventory_crud_api", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb://localhost:27017/Inventory_crud_api")
     .then(() => console.log('Database connected'))
     .catch(err => console.log(err));
 module.exports={
